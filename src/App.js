@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class Atividade extends Component{
+  
+  state = {music: ['Warm Glow', 'The Devil Is Human', 'Pretend'],
+  tvShow: ['Stranger Things', 'The Handmaids Tale', 'Good Girls'],
+  movies: ['The Invisible Man', 'The Princess and The Frog', 'Parasite'],
+  books: ['Heartstopper', 'The Testaments', 'To Kill a Mockingbird'],
+  zodiac: ['Sagittarius', 'Gemini', 'Capricorn'],
+  games: ['Crypt of the Necrodancer', 'Firewatch', 'Risk of Rain 2']
 }
 
-export default App;
+  render(){
+    return(
+      <div>
+        <h2>Minhas músicas do momento são:</h2>
+        <ul>
+          {this.state.music.map((item) => <li>{item}</li>)}
+        </ul>
+        <h2>Algumas séries que assisti:</h2>
+        <ul>
+          {this.state.tvShow.map((item) => <li>{item}</li>)}
+        </ul>
+        <h2>Algumas filmes que assisti:</h2>
+        <ul>
+          {this.state.movies.map((item) => <li>{item}</li>)}
+        </ul>
+        <h2>Alguns livros que li:</h2>
+        <ul>
+          {this.state.books.map((item) => <li>{item}</li>)}
+        </ul>
+        <h2>Meus signos fortes no mapa astral:</h2>
+        <ul>
+          {this.state.zodiac.map((item) => <li>{item}</li>)}
+        </ul>
+        <h2>Jogos que estou jogando:</h2>
+        <ul>
+          {this.state.games.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    )
+  }
+}
+
+export default Atividade;
